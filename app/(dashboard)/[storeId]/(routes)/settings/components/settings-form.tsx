@@ -26,7 +26,7 @@ import { Input } from "@/components/ui/input";
 import { AlertModal } from "@/components/modals/alert-modal";
 import { ApiAlert } from "@/components/ui/api-alert";
 
-interface SettingsFromProps {
+interface SettingsFormProps {
   initialData: Store;
 }
 
@@ -36,7 +36,7 @@ const formSchema = z.object({
 
 type SettingsFormValues = z.infer<typeof formSchema>;
 
-export const SettingsForm = ({ initialData }: SettingsFromProps) => {
+export const SettingsForm = ({ initialData }: SettingsFormProps) => {
   const form = useForm<SettingsFormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: initialData,
